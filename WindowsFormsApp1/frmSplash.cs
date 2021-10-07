@@ -30,5 +30,10 @@ namespace WindowsFormsApp1
             if (intHourNow >= 12) lblTitle.Text = "Good afternoon, " + Program.sessionUser + ".";
             if (intHourNow >= 0) lblTitle.Text = "Good morning, " + Program.sessionUser + ".";
         }
+
+        private void btnQuiz_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

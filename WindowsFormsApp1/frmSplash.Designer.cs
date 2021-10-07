@@ -66,6 +66,7 @@ namespace WindowsFormsApp1
             this.btnQuiz.TabIndex = 0;
             this.btnQuiz.Text = "Quiz";
             this.btnQuiz.UseVisualStyleBackColor = true;
+            this.btnQuiz.Click += new System.EventHandler(this.btnQuiz_Click);
             // 
             // btnPupils
             // 
