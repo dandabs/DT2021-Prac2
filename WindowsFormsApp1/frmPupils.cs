@@ -16,5 +16,25 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPupils_Load(object sender, EventArgs e)
+        {
+            refreshPupils();
+        }
+
+        private void refreshPupils()
+        {
+
+        }
+
+        private void grdPupils_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
