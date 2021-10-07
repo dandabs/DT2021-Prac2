@@ -40,10 +40,11 @@ namespace WindowsFormsApp1
                 File.Create(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SkiSlope\pupils.txt");
             }
 
+            string strFileLoc = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SkiSlope\pupils.txt";
+
             try
             {
-
-                string strFileLoc = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SkiSlope\pupils.txt";
+       
                 StreamReader strReader = new StreamReader(strFileLoc);
                 string[] totalData = new String[File.ReadAllLines(strFileLoc).Length];
                 totalData = strReader.ReadLine().Split(',');
@@ -55,7 +56,7 @@ namespace WindowsFormsApp1
 
             } catch (NullReferenceException e)
             {
-
+                string strContents = File.ReadAllText(strFileLoc);
             }
         }
 
