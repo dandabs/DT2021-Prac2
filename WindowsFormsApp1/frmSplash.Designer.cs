@@ -76,6 +76,7 @@ namespace WindowsFormsApp1
             this.btnPupils.TabIndex = 1;
             this.btnPupils.Text = "Pupils";
             this.btnPupils.UseVisualStyleBackColor = true;
+            this.btnPupils.Click += new System.EventHandler(this.btnPupils_Click);
             // 
             // tmpButton
             // 

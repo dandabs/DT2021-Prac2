@@ -35,5 +35,11 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void btnPupils_Click(object sender, EventArgs e)
+        {
+            Form frmPupils = new frmPupils();
+            frmPupils.ShowDialog();
+        }
     }
 }
