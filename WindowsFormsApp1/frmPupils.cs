@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
             }
             if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SkiSlope\pupils.txt"))
             {
-                File.Create(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SkiSlope\pupils.txt");
+                File.Create(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SkiSlope\pupils.txt").Close();
             }
 
             string strFileLoc = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SkiSlope\pupils.txt";
@@ -48,11 +48,13 @@ namespace WindowsFormsApp1
                 StreamReader strReader = new StreamReader(strFileLoc);
                 string[] totalData = new String[File.ReadAllLines(strFileLoc).Length];
                 totalData = strReader.ReadLine().Split(',');
+                grdPupils.Rows.Clear();
                 while (!strReader.EndOfStream)
                 {
                     totalData = strReader.ReadLine().Split(',');
-                    grdPupils.Rows.Add(totalData[0], totalData[1], totalData[2], totalData[3], totalData[4], totalData[5]);
+                    grdPupils.Rows.Add(totalData[0], totalData[1], totalData[2], totalData[3], totalData[4], totalData[5], totalData[6], totalData[7], totalData[8], totalData[9], totalData[10], totalData[11]);
                 }
+                strReader.Close();
 
             } catch (NullReferenceException e)
             {
@@ -63,6 +65,11 @@ namespace WindowsFormsApp1
         private void grdPupils_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            refreshPupils();
         }
     }
 }

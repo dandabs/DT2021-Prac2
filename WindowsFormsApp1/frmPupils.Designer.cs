@@ -36,12 +36,21 @@ namespace WindowsFormsApp1
             this.addPupilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pupilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addSlopeTimesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clmSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmForename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSkiAverage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmQuiz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmS1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmS2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmS3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmS4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmS5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdPupils)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +66,13 @@ namespace WindowsFormsApp1
             this.clmDOB,
             this.clmClass,
             this.clmSkiAverage,
-            this.clmQuiz});
+            this.clmQuiz,
+            this.clmS1,
+            this.clmS2,
+            this.clmS3,
+            this.clmS4,
+            this.clmS5,
+            this.clmUID});
             this.grdPupils.Location = new System.Drawing.Point(13, 72);
             this.grdPupils.Name = "grdPupils";
             this.grdPupils.ReadOnly = true;
@@ -89,7 +104,8 @@ namespace WindowsFormsApp1
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addPupilToolStripMenuItem});
+            this.addPupilToolStripMenuItem,
+            this.refreshToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
             this.toolStripMenuItem1.Text = "File";
@@ -104,16 +120,31 @@ namespace WindowsFormsApp1
             // pupilToolStripMenuItem
             // 
             this.pupilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem});
             this.pupilToolStripMenuItem.Name = "pupilToolStripMenuItem";
             this.pupilToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.pupilToolStripMenuItem.Text = "Pupil";
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addSlopeTimesToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // addSlopeTimesToolStripMenuItem
+            // 
+            this.addSlopeTimesToolStripMenuItem.Name = "addSlopeTimesToolStripMenuItem";
+            this.addSlopeTimesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addSlopeTimesToolStripMenuItem.Text = "Add slope times";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // clmSurname
             // 
@@ -151,6 +182,55 @@ namespace WindowsFormsApp1
             this.clmQuiz.Name = "clmQuiz";
             this.clmQuiz.ReadOnly = true;
             // 
+            // clmS1
+            // 
+            this.clmS1.HeaderText = "Slope 1";
+            this.clmS1.Name = "clmS1";
+            this.clmS1.ReadOnly = true;
+            this.clmS1.Visible = false;
+            // 
+            // clmS2
+            // 
+            this.clmS2.HeaderText = "Slope 2";
+            this.clmS2.Name = "clmS2";
+            this.clmS2.ReadOnly = true;
+            this.clmS2.Visible = false;
+            // 
+            // clmS3
+            // 
+            this.clmS3.HeaderText = "Slope 3";
+            this.clmS3.Name = "clmS3";
+            this.clmS3.ReadOnly = true;
+            this.clmS3.Visible = false;
+            // 
+            // clmS4
+            // 
+            this.clmS4.HeaderText = "Slope 4";
+            this.clmS4.Name = "clmS4";
+            this.clmS4.ReadOnly = true;
+            this.clmS4.Visible = false;
+            // 
+            // clmS5
+            // 
+            this.clmS5.HeaderText = "Slope 5";
+            this.clmS5.Name = "clmS5";
+            this.clmS5.ReadOnly = true;
+            this.clmS5.Visible = false;
+            // 
+            // clmUID
+            // 
+            this.clmUID.HeaderText = "UID";
+            this.clmUID.Name = "clmUID";
+            this.clmUID.ReadOnly = true;
+            this.clmUID.Visible = false;
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
             // frmPupils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,11 +260,20 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem addPupilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pupilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addSlopeTimesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSurname;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmForename;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDOB;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmClass;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSkiAverage;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmQuiz;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmS1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmS2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmS3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmS4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmS5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmUID;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }
