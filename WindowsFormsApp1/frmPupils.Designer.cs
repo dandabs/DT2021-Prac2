@@ -73,12 +73,13 @@ namespace WindowsFormsApp1
             this.clmS4,
             this.clmS5,
             this.clmUID});
-            this.grdPupils.Location = new System.Drawing.Point(13, 72);
+            this.grdPupils.Location = new System.Drawing.Point(12, 72);
             this.grdPupils.Name = "grdPupils";
             this.grdPupils.ReadOnly = true;
             this.grdPupils.Size = new System.Drawing.Size(775, 366);
             this.grdPupils.TabIndex = 0;
             this.grdPupils.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPupils_CellContentClick);
+            this.grdPupils.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPupils_CellDoubleClick);
             // 
             // lblSubtitle
             // 

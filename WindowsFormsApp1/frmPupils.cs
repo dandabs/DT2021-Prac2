@@ -71,5 +71,14 @@ namespace WindowsFormsApp1
         {
             refreshPupils();
         }
+
+        private void grdPupils_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == 0 || e.ColumnIndex == 0) return;
+
+            string strUID = (string)grdPupils[11, e.RowIndex].Value;
+            MessageBox.Show(strUID);
+
+        }
     }
 }
