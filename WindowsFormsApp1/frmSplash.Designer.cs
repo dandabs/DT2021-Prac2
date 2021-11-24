@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
             this.pnlItems.Controls.Add(this.tmpButton);
             this.pnlItems.Location = new System.Drawing.Point(12, 78);
             this.pnlItems.Name = "pnlItems";
-            this.pnlItems.Size = new System.Drawing.Size(201, 360);
+            this.pnlItems.Size = new System.Drawing.Size(200, 360);
             this.pnlItems.TabIndex = 1;
             // 
             // btnQuiz
