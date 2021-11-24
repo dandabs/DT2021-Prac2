@@ -39,17 +39,25 @@ namespace WindowsFormsApp1
             string file = "pupils.txt";
 
             string conStr = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
-    path + ";Extended Properties=\"Text;HDR=No;FMT=Delimited\"";
+    path + ";Extended Properties=\"Text;HDR=Yes;FMT=Delimited\"";
             OleDbConnection conn = new OleDbConnection(conStr);
 
             string selectQr = "Select * from " + file;
             OleDbCommand cmd = new OleDbCommand(selectQr, conn);
 
+            cmd.CommandTimeout = 3000;
+
             cmd.Connection.Open();
             OleDbDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
-            chart1.Series[0].Points.DataBindXY(reader, "0", reader, "2");
-            chart1.Series[0].ChartType = SeriesChartType.Line;
+            //chart1.Series[0].Points.DataBindXY(reader, "4", reader, "2");
+            chart1.Series[0].Points.DataBindXY(reader, "1", reader, "4");
+            //chart1.Series[1].Points.DataBindY(reader, "5");
+            chart1.Series[0].ChartType = SeriesChartType.Bar;
+            chart1.Series[0].Name = "Average Time";
+
+            //chart1.Series[1].ChartType = SeriesChartType.Bar;
+           // chart1.Series[1].Name = "Quiz Results";
 
             reader.Close();
             conn.Close();
