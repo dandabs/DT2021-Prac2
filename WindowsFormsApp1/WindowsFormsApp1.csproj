@@ -94,6 +94,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\frmLogin.datasource" />
+    <None Include="Properties\DataSources\frmPupils.datasource" />
+    <None Include="Properties\DataSources\frmQuiz.datasource" />
+    <None Include="Properties\DataSources\frmSplash.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
